@@ -25,9 +25,10 @@
 \usepackage{subfig}
 \graphicspath{ {images/} }
 \renewcommand{\arraystretch}{1.5}
+\setlength{\abovedisplayskip}{5pt}
 
 \author{Maciej Mionskowski}
-\title{Sprawozdanie 3}
+\title{Sprawozdanie 4}
 \date{}
 \subtitle{Wzmacniacz Operacyjny}
 \begin{document}
@@ -40,37 +41,31 @@
 		\begin{subsection}{Analiza}
 				\begin{figure}[ht]
 				\begin{center}
-					\label{fig:circuit-1}
 					\includegraphics[width=0.8\linewidth]{03-circuit}
 					\caption{Schemat ideowy odwracającego wzmacniacza operacyjnego. W obwodzie należało wyznaczyć wartość rezystora $ R_{2} $ }
+					\label{fig:circuit-1}
 				\end{center}
 				\end{figure}
-
-				\begin{equation*}
-					\begin{aligned}
-						i_{R_{1}} = \frac{U_{we}}{R_{1}},\; U_{-} = 0V,\; U_{+} = 0V,\; i_{-} = 0A,\; i_{+} = 0A  \\[5pt]
-						U_{wy} = -i_{R_{1}}*R_{2}  \\[5pt]
-						\frac{U_{wy}}{U_{we}} = \frac{-\frac{U_{we}}{R_{1}}*R_{2}}{U_{we}} = -\frac{R_{2}}{R_{1}} = k_{u} \\[5pt]
-						-10k\Omega * -10 = R_{2} \Rightarrow R_{2} = 100k\Omega
-					\end{aligned}
-				\end{equation*}
-
+				\begin{gather*}
+					i_{R_{1}} = \frac{U_{we}}{R_{1}},\; U_{-} = 0V,\; U_{+} = 0V,\; i_{-} = 0A,\; i_{+} = 0A  \\[5pt]
+					U_{wy} = -i_{R_{1}}*R_{2}  \\[5pt]
+					\frac{U_{wy}}{U_{we}} = \frac{-\frac{U_{we}}{R_{1}}*R_{2}}{U_{we}} = -\frac{R_{2}}{R_{1}} = k_{u} \\[5pt]
+					-10k\Omega * -10 = R_{2} \Rightarrow R_{2} = 100k\Omega
+				\end{gather*}
 				\begin{figure}[ht]
 				\begin{center}
-					\includegraphics[width=0.6\linewidth]{03-osc}
+					\includegraphics[width=0.5\linewidth]{03-osc}
 					\caption{Pomiar napięcia \textit{peak to peak} na oscyloskopie w układzie \ref{fig:circuit-1} celem wyznaczenia rzeczywistego wzmocnienia i potwierdzenia poprawności wykonanych obliczeń.}
 				\end{center}
 				\end{figure}
 				\pagebreak
 
-				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} na oscyloskopie: \\
-				\begin{center}
-					\begin{math}
-					 U_{we} = \vert-9.961\vert + 9.970 = 19.931\quad [mV], \\ 
-					 U_{wy} = 99.509 + \vert-99.756\vert = 199.265 \quad [mV],\\
-					 k_{u} = \frac{199.265}{19.931} = 9.9977 
-					\end{math}
-				\end{center}
+				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} na oscyloskopie:%
+				\begin{gather*}
+					U_{we} = \vert-9.961\vert + 9.970 = 19.931\quad [mV], \\
+					U_{wy} = 99.509 + \vert-99.756\vert = 199.265 \quad [mV],\\
+					k_{u} = \frac{199.265}{19.931} = 9.9977 
+				\end{gather*}
 
 				\begin{figure}[!ht]
 				\begin{center}
@@ -80,14 +75,12 @@
 				\end{center}
 				\end{figure}
 
-				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} przy analizie transient: \\
-				\begin{center}
-					\begin{math}
+				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} przy analizie transient:%
+				\begin{gather*}
 					 U_{we} = \vert-9.9962\vert + 9.9919 = 19.9881\quad [mV], \\ 
 					 U_{wy} = 132.9544 + \vert-66.9033\vert = 199.8577 \quad [mV],\\
 					 k_{u} = \frac{199.8577}{19.9881} = 9.9988 
-					\end{math}
-				\end{center}
+				\end{gather*}
 		\end{subsection}
 		\begin{subsection}{Wniosek}
 			Zakładając nieskończoną impedancję wejściową i dążenie wzmacniacza do wyrównania napięć na wejściach możemy dzięki bardzo dobrym rzeczywistym parametrom wzmacniacza wyznaczyć takie wartości rezystorów aby uzyskać dane wzmocnienie. W przypadku powyższego zadania wartość $ R_{2} = 100k\Omega $ jest szukanym oporem, który daje wzmocnienie $ k_{u} = -10 $. Wzmocnienie we wzmacniaczu odwracającym możemy policzyć ze wzoru $-\frac{R_{2}}{R_{1}} = k_{u} $. Drobne rozbieżności rzędu $0.1 \% $ są spowodowane napięciem polaryzującym wzmacniacz i niedoskonałościami programu MultiSim.
@@ -130,53 +123,47 @@
 				\begin{center}
 					\includegraphics[width=0.7\linewidth]{05-circuit-labels}
 					\caption{Schemat ideowy odwracającego wzmacniacza operacyjnego. W obwodzie należało wyznaczyć wartość rezystora $ R_{2} $ }
-					\label{fig:circuit-1}
+					\label{fig:circuit-05}
 				\end{center}
 				\end{figure}
-				\begin{center}
-					$ i_{R_{3}} &= \frac{U_{we}}{R_{3}},\; U_{-} = U_{we},\; U_{+} = U_{we},\; i_{-} = 0A,\; i_{+} = 0A $ \\[5pt]
-					$ U_{R2} = i_{R_{3}}*R_{2} $ \\[5pt]
-					$ U_{wy} = U_{R2} + U_{we} $ \\[5pt]
-					$ k_{u} = \frac{U_{wy}}{U_{we}} = \frac{U_{R2}}{U_{we}} + 1 $ \\[5pt]
-					$ k_{u} = \frac{R_{2}}{R_{3}} + 1 $ \\[5pt]
-					$ (k_{u} - 1)*R_{3} = R_{2} $ \\[5pt]
-
-					$ (5 - 1) * 10k\Omega = R_{2} \Rightarrow R_{2} = 40k\Omega $
-
-				\end{center}
+				\begin{gather*}
+					 i_{R_{3}} = \frac{U_{we}}{R_{3}},\; U_{-} = U_{we},\; U_{+} = U_{we},\; i_{-} = 0A,\; i_{+} = 0A  \\
+					 U_{R2} = i_{R_{3}}*R_{2}  \\
+					 U_{wy} = U_{R2} + U_{we}  \\
+					 k_{u} = \frac{U_{wy}}{U_{we}} = \frac{U_{R2}}{U_{we}} + 1  \\
+					 k_{u} = \frac{R_{2}}{R_{3}} + 1  \\
+					 (k_{u} - 1)*R_{3} = R_{2}  \\
+					 (5 - 1) * 10k\Omega = R_{2} \Rightarrow R_{2} = 40k\Omega 
+				\end{gather*}
 
 				\begin{figure}[ht]
 				\begin{center}
 					\includegraphics[width=0.7\linewidth]{05-osc}
-					\caption{Pomiar napięcia \textit{peak to peak} na oscyloskopie w układzie \ref{fig:circuit-1} celem wyznaczenia rzeczywistego wzmocnienia i potwierdzenia poprawności wykonanych obliczeń.}
+					\caption{Pomiar napięcia \textit{peak to peak} na oscyloskopie w układzie \ref{fig:circuit-05} celem wyznaczenia rzeczywistego wzmocnienia i potwierdzenia poprawności wykonanych obliczeń.}
 				\end{center}
 				\end{figure}
 				\pagebreak
 
-				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} na oscyloskopie: \\
-				\begin{center}
-					\begin{math}
-					 U_{we} = \vert-9.988\vert + 9.988 = 19.976\quad [mV], \\ 
-					 U_{wy} = 49.942 + \vert-49.942\vert = 99.884 \quad [mV],\\
-					 k_{u} = \frac{99.884}{19.976} = 5.0002
-					\end{math}
-				\end{center}
+				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} na oscyloskopie:
+				\begin{gather*}
+					U_{we} = \vert-9.988\vert + 9.988 = 19.976\quad [mV], \\ 
+					U_{wy} = 49.942 + \vert-49.942\vert = 99.884 \quad [mV],\\
+					k_{u} = \frac{99.884}{19.976} = 5.0002
+				\end{gather*}
 
 				\begin{figure}[!ht]
 				\begin{center}
 					\includegraphics[width=0.7\linewidth,scale=2]{05-transient}
-					\caption{Pomiar napięcia \textit{peak to peak} w analizie transient w układzie \ref{fig:circuit-1} celem wyznaczenia rzeczywistego wzmocnienia i potwierdzenia poprawności wykonanych obliczeń.}
+					\caption{Pomiar napięcia \textit{peak to peak} w analizie transient w układzie \ref{fig:circuit-05} celem wyznaczenia rzeczywistego wzmocnienia i potwierdzenia poprawności wykonanych obliczeń.}
 				\end{center}
 				\end{figure}
 
-				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} przy analizie transient: \\
-				\begin{center}
-					\begin{math}
-					 U_{we} = \vert-9.9950\vert + 9.9950 = 19.99\quad [mV], \\ 
-					 U_{wy} = 64.9743 + \vert-34.9712\vert = 99.9455 \quad [mV],\\
-					 k_{u} = \frac{99.9455}{19.99} = 4.9997 $
-					\end{math}
-				\end{center}
+				Rzeczywiste wzmocnienie układu możemy wyznaczyć wyznaczając stosunek napięć \textit{peak to peak} przy analizie transient:
+				\begin{gather*}
+					U_{we} = \vert-9.9950\vert + 9.9950 = 19.99\quad [mV], \\ 
+					U_{wy} = 64.9743 + \vert-34.9712\vert = 99.9455 \quad [mV],\\
+					k_{u} = \frac{99.9455}{19.99} = 4.9997 
+				\end{gather*}
 		\end{subsection}
 		\begin{subsection}{Wniosek}
 			Zakładając nieskończoną impedancję wejściową i dążenie wzmacniacza do wyrównania napięć na wejściach możemy dzięki bardzo dobrym rzeczywistym parametrom wzmacniacza wyznaczyć takie wartości rezystorów aby uzyskać dane wzmocnienie. W przypadku powyższego zadania wartość $ R_{2} = 40k\Omega $ jest szukanym oporem, który daje wzmocnienie $ k_{u} = 5 $. Wzmocnienie we wzmacniaczu nieodwracającym możemy policzyć ze wzoru $\frac{R_{2}}{R_{3}} + 1 = k_{u} $. Drobne rozbieżności rzędu $0.1 \% $ są spowodowane napięciem polaryzującym wzmacniacz i niedoskonałościami programu MultiSim.
@@ -248,7 +235,6 @@
 				\begin{center}
 					\includegraphics[width=0.6\linewidth]{08-osc-2}
 					\caption{Przebieg sygnału wejściowego i wyjściowego w układzie \ref{fig:circuit-8} na oscyloskopie. Sygnał zielony resetuje najwyższy znaleziony szczyt, kanał pomarańczowy reprezentuje napięcie wejściowe, a kanał niebieski ostatni znaleziony szczyt.}
-					\label{fig:circuit-8}
 				\end{center}
 				\end{figure}
 		\end{subsection}
@@ -306,7 +292,7 @@
 				\begin{figure}[!ht]
 				\begin{center}
 					\includegraphics[width=0.7\linewidth]{10-osc}
-					\caption{Pomiary napięć w układzie:\\niebieski - $u_{weB} $ \\ zielony - $u_{weA} \\ czerwony - $u_{wy}$, \\ można zaobserwować jak sygnał niebieski jest odejmowany od zielonego.}
+					\caption{Pomiary napięć w układzie:\\niebieski - $u_{weB} $ \\ zielony - $u_{weA}$ \\ czerwony - $u_{wy}$, \\ można zaobserwować jak sygnał niebieski jest odejmowany od zielonego.}
 				\end{center}
 				\end{figure}
 		\end{subsection}
