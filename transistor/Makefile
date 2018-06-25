@@ -1,5 +1,5 @@
-all: diode.tex
-	pdflatex diode.tex
+all: transistor.tex
+	pdflatex transistor.tex
 
 clean:
 	-rm *.aux
